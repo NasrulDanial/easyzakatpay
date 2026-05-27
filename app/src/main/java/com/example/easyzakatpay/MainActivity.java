@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // CONNECT XML COMPONENTS
-
         edtWeight = findViewById(R.id.edtWeight);
         edtPrice = findViewById(R.id.edtPrice);
 
@@ -51,13 +49,10 @@ public class MainActivity extends AppCompatActivity {
         txtZakatPayable = findViewById(R.id.txtZakatPayable);
         txtTotalZakat = findViewById(R.id.txtTotalZakat);
 
-        // CALCULATE BUTTON
         btnCalculate.startAnimation(buttonAnim);
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // VALIDATION
 
                 if (edtWeight.getText().toString().isEmpty()) {
                     edtWeight.setError("Please enter gold weight");
@@ -76,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                // GET VALUES
                 double weight = Double.parseDouble(edtWeight.getText().toString());
                 double price = Double.parseDouble(edtPrice.getText().toString());
                 double uruf;
@@ -85,14 +79,12 @@ public class MainActivity extends AppCompatActivity {
                 double totalValue;
                 double totalZakat;
 
-                // CHECK GOLD TYPE
                 if (radioKeep.isChecked()) {
                     uruf = 85;
                 } else {
                     uruf = 200;
                 }
 
-                // CALCULATIONS
                 totalValue = weight * price;
                 zakatWeight = weight - uruf;
                 if (zakatWeight < 0) {
@@ -102,18 +94,15 @@ public class MainActivity extends AppCompatActivity {
                 zakatPayable = zakatWeight * price;
                 totalZakat = zakatPayable * 0.025;
 
-                // DISPLAY OUTPUT
                 txtTotalValue.setText("Total Gold Value: RM " + String.format("%.2f", totalValue));
                 txtZakatWeight.setText("Zakat Weight: " + String.format("%.2f", zakatWeight) + " gram");
                 txtZakatPayable.setText("Zakat Payable: RM " + String.format("%.2f", zakatPayable));
                 txtTotalZakat.setText("Total Zakat: RM " + String.format("%.2f", totalZakat));
 
-                // SUCCESS MESSAGE
                 Toast.makeText(MainActivity.this, "Zakat calculated successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // RESET BUTTON
         btnReset.startAnimation(buttonAnim);
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
