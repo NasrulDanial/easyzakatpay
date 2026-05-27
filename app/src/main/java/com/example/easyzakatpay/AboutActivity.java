@@ -27,8 +27,7 @@ public class AboutActivity extends AppCompatActivity {
 
         txtGithub.setOnClickListener(view -> {
 
-            String url =
-                    "https://github.com/yourusername/easyzakatpay";
+            String url = "https://github.com/NasrulDanial/easyzakatpay";
 
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
