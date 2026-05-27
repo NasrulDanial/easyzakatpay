@@ -108,7 +108,7 @@
                 android:id="@+id/txtGithub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="https://github.com/yourusername/easyzakatpay"
+                android:text="https://github.com/NasrulDanial/easyzakatpay"
                 android:textColor="#1565C0"
                 android:textStyle="bold"
                 android:textSize="16sp"
