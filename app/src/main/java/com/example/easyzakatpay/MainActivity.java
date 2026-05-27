@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.menuShare) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out EasyZakat Pay:\nhttps://github.com/nasrul/easyzakatpay");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "https://github.com/NasrulDanial/easyzakatpay");
             startActivity(Intent.createChooser(shareIntent, "Share via"));
             return true;
         }
